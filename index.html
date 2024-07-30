@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Planner</title>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom styles for a JARVIS-like UI */
+        body {
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text color */
+        }
+        nav {
+            background-color: #1e1e1e; /* Darker background for nav */
+        }
+        .bg-white {
+            background-color: #1f1f1f; /* Dark background for cards */
+        }
+        .text-gray-700 {
+            color: #b0b0b0; /* Light gray text */
+        }
+        .hover:bg-blue-700 {
+            background-color: #d32f2f; /* Red background for hover effect */
+        }
+        .hover:bg-blue-800:hover {
+            background-color: #c62828; /* Darker red background for hover effect */
+        }
+        .bg-blue-700 {
+            background-color: #d32f2f; /* Red button background */
+        }
+        .bg-blue-800 {
+            background-color: #c62828; /* Darker red button background */
+        }
+        .focus:ring-blue-300 {
+            box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.5); /* Red focus ring */
+        }
+        .event-card {
+            max-width: 300px;
+            background-color: #1f1f1f;
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .event-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .event-card .p-5 {
+            padding: 16px;
+        }
+        .event-card h5 {
+            font-size: 1.5rem;
+        }
+        .event-card p {
+            font-size: 1rem;
+        }
+        .button-container {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+            <a href="https://flowbite.com" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">EVENT PLANNER</span>
+            </a>
+
+            <div class="flex items-center space-x-6 rtl:space-x-reverse">
+                <span id="myevents_btn">
+                    <a href="myEvents/index.html" class="text-sm text-gray-500 dark:text-white hover:underline">My Events</a>
+                </span>
+
+                <span id="create_event_btn">
+                    <a href="/createEvent/index.html" class="text-sm text-blue-600 dark:text-blue-500 hover:underline">Create Event</a>
+                </span>
+
+                <a href="/profile/index.html">
+                    <img 
+                        id="user_img"
+                        class="w-12 h-12 rounded-full"
+                        style="display: none;"
+                        src="https://png.pngitem.com/pimgs/s/294-2947257_interface-icons-user-avatar-profile-user-avatar-png.png" alt="">
+                </a>
+
+                <a id="login_link" href="/auth/login/index.html" class="text-sm text-blue-600 dark:text-blue-500 hover:underline">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="event_card_container" class="flex flex-wrap justify-center gap-4 p-4">
+        <!-- Event cards will be dynamically inserted here -->
+    </div>
+
+    <button id="logout_btn" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">Logout</button>
+
+    <script src="app.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+</body>
+</html>
